@@ -1,11 +1,18 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
+let passwordText = ""
+let uppercase = "QWERTYUIOPASDFGHJKLZXCVBNM"
+let lowercase = "qwertyuiopasdfghjklzxcvbnmm"
+let special = "!@#$%^&*,.?;:"
+
+
+
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
+  let charCount = prompt('How many characters would you like?')
   passwordText.value = password;
 
 }
