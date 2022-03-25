@@ -7,19 +7,22 @@ function generatePassword() {
   let lowerChoice = confirm('Would you like lowercase letters?')
   let specialChoice = confirm('Would you like special characters?')
   if (upperChoice === true) {
-    charArray.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
+    charArray.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
   }
   if (lowerChoice === true) {
-    charArray.push("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
+    charArray.push("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
   }
   if (specialChoice === true) {
-    charArray.push('!', '@', '#', '$', '%', '^', '&', '*', '?')
+    charArray.push('!', '@', '#', '$', '%', '^', '&', '*', '?');
   }
-  console.log(charArray)
-  for (let i = 0; i <= charCount; i++) {
-
+  let charString = charArray.toString()
+  for (let i = 0; i < charCount; i++) {
+    password += charString.charAt(Math.floor(Math.random() * charString.length))
   }
+  console.log(password)
+  return password
 }
+
 // Write password to the #password input
 function writePassword() {
   let password = generatePassword();
