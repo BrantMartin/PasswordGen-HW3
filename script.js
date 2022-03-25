@@ -6,6 +6,7 @@ function generatePassword() {
   let upperChoice = confirm('Would you like capital letters?')
   let lowerChoice = confirm('Would you like lowercase letters?')
   let specialChoice = confirm('Would you like special characters?')
+  let numChoice = confirm('Would you like numbers?')
   if (upperChoice === true) {
     charArray.push("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
   }
@@ -15,7 +16,12 @@ function generatePassword() {
   if (specialChoice === true) {
     charArray.push('!', '@', '#', '$', '%', '^', '&', '*', '?');
   }
-  let charString = charArray.toString()
+  if (numChoice === true) {
+    charArray.push('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+  }
+  let charString = charArray.join("")
+  console.log(charString)
+  let password = ""
   for (let i = 0; i < charCount; i++) {
     password += charString.charAt(Math.floor(Math.random() * charString.length))
   }
